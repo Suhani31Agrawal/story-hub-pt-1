@@ -106,16 +106,12 @@ export default class ReadStoryscreen extends React.Component {
           </View>
           <View style={styles.inputView}>
             <TextInput
-              style={styles.inputField}
-              placeholder='Author'
-              value={this.state.scannedStudentId}
-            />
-            {/* <TextInput
-              style={styles.inputField}
+              style={styles.Field}
               placeholder='Write Your Story Here'
-              value={this.state.scannedBookId}
-            /> */}
-            <TouchableOpacity 
+              value={this.state.scannedStudentId}
+            /> 
+          </View>
+          <TouchableOpacity 
               style={styles.scanedButton}
               onPress={()=>{
                 this.getCameraPermissions('Write Your Story Here')
@@ -124,10 +120,9 @@ export default class ReadStoryscreen extends React.Component {
               <Text 
                 style={styles.buttonText}
               >
-                SCAN
+                SUBMIT
               </Text>
             </TouchableOpacity>
-          </View>
         </View>
       );
     }
@@ -153,6 +148,12 @@ const styles=StyleSheet.create({
     borderWidth:1.5,
     fontSize:20
   },
+   Field:{
+    width:215,
+    height:200,
+    borderWidth:1.5,
+    fontSize:20
+  },
   scanButton:{
     backgroundColor: '#66BB6A',
     width: 50,
@@ -160,10 +161,9 @@ const styles=StyleSheet.create({
     borderLeftWidth: 0
   },
   scanedButton:{
-    backgroundColor: '#66BB6A',
-    width:50,
+    backgroundColor: 'lightblue',
+    width: 70,
     borderWidth: 1.5, 
-    borderLeftWidth: 0
   },
   inputView:{
   flexDirection:'row',
